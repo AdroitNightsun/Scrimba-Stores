@@ -1,3 +1,91 @@
 body {
-    margin: 0;
-} 
+  margin: 0;
+  font-family: "Smythe";
+  background: #ffffff;
+  width: 600px;
+  margin: 0 auto;
+}
+
+header {
+  background-image: url("head.png");
+  height: 167px;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 20px 46px;
+  box-sizing: border-box;
+}
+
+.main-heading {
+  font-size: 39px;
+  margin: 20px 0 0 0;
+}
+
+.secondary-heading {
+  font-size: 22px;
+  margin: 10px 0 0 0;
+}
+
+#menu-container {
+  padding: 50px 46px;
+}
+
+.menu {
+  border-bottom: 1px solid #d2d2d2;
+  padding: 45px 0;
+}
+
+.menu:first-child {
+  padding-top: 0;
+}
+
+.menu:last-child {
+  border-bottom: none;
+}
+
+.menu-inner {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.menu-emoji {
+  font-size: 70px;
+}
+
+.menu-details {
+  font-family: "Smythe", cursive;
+  flex-grow: 1;
+}
+
+.menu-name {
+  font-size: 28px;
+  margin: 0;
+}
+
+.menu-ingredients {
+  font-family: sans-serif;
+  color: #8b8b8b;
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+.menu-price {
+  font-size: 20px;
+  margin: 8px 0 0 0;
+}
+
+.add-btn {
+  border: 1.5px solid #dedede;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 32px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: #3c3c3c;
+}

@@ -10,14 +10,25 @@
   </head>
   <body>
     <header>
-        <h1 class="main-heading">Jimmy's Diner</h1>
-        <h2 class="secondary-heading">The best burgers and pizzas in town.</h2>
+      <h1 class="main-heading">Jimmy's Diner</h1>
+      <h2 class="secondary-heading">The best burgers and pizzas in town.</h2>
     </header>
     <main>
-        <div class="menu-container" id="menu-container">
-            <!-- menu here -->
-        </div>
+      <div class="menu-container" id="menu-container">
+        <!-- menu here -->
+      </div>
     </main>
+    <footer class="order-section" id="order-section">
+      <h2 class="order-heading">Your order</h2>
+      <div class="order-container" id="order-container">
+        <!-- order items -->
+        <span class="total-container" id="total-container">
+          <h2 class="total-heading">Total price:</h2>
+          <div class="total-price" id="total-price"></div>
+        </span>
+      </div>
+      <button id="order-btn" class="complete-order">Complete order</button>
+    </footer>
     <script src="index.js" type="module"></script>
   </body>
 </html>

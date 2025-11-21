@@ -10,9 +10,6 @@ document.addEventListener('click', function(e){
     else if(e.target.id === 'order-btn'){
         handleOrderClick()
     }
-    // else if(e.target.id === 'tweet-btn'){
-    //     handleTweetBtnClick()
-    // }
 })
 
 function handleAddClick(addId){
@@ -24,6 +21,9 @@ function handleOrderClick(){
 }
 
 function getMenuHtml() {
+  let orderHtml = ``;
+    orderHtml += ``
+
   let menuHtml = ``;
   menuArray.forEach(function (item) {
     menuHtml += `<div class="menu">

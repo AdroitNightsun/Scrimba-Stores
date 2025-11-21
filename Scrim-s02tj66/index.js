@@ -1,5 +1,7 @@
 import { menuArray } from "./data.js";
 
+let cart = [];
+
 document.addEventListener('click', function(e){
     if(e.target.dataset.add){
        handleAddClick(e.target.dataset.add) 
@@ -13,7 +15,22 @@ document.addEventListener('click', function(e){
 })
 
 function handleAddClick(addId){
-  console.log(addId)
+    const targetCartItem = cart.find(function(item){
+        return item.id == addId
+    })
+    
+    if(targetCartItem){
+        targetCartItem.quantity++
+    } else {
+        const targetMenuItem = menuArray.find(function(item){
+            return item.id == addId
+        })
+        if (targetMenuItem) {
+            const newItem = {...targetMenuItem, quantity: 1}
+            cart.push(newItem)
+        }
+    }
+    render()
 }
 
 function handleOrderClick(){
@@ -21,8 +38,6 @@ function handleOrderClick(){
 }
 
 function getMenuHtml() {
-  let orderHtml = ``;
-    orderHtml += ``
 
   let menuHtml = ``;
   menuArray.forEach(function (item) {
@@ -41,8 +56,35 @@ function getMenuHtml() {
   return menuHtml;
 }
 
+function getOrderHtml(){
+  if(cart.length === 0){
+    return ``
+  }
+  
+  let orderHtml = ``
+  cart.forEach(function (orderItem){
+    orderHtml += `<span class="order-item-line">
+      <div class="order-item">${orderItem.name}</div>
+      <button class="remove-btn" data-remove="${orderItem.id}">(remove)</button>
+      <div>$${orderItem.price * orderItem.quantity}</div>
+    </span>`
+  })
+  
+  orderHtml += `<span class="total-container" id="total-container">
+          <h2 class="total-heading">Total price:</h2>
+          <div class="total-price" id="total-price">$${getCartTotal()}</div>
+        </span>`
+  
+  return orderHtml
+}
+
+function getCartTotal(){
+    return cart.reduce((total, item) => total + (item.price * item.quantity), 0)
+}
+
 function render() {
   document.getElementById("menu-container").innerHTML = getMenuHtml();
+  document.getElementById("order-items").innerHTML = getOrderHtml();
 }
 
 render();

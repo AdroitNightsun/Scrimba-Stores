@@ -6,7 +6,6 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  /* color: #404040; */
   margin: 0;
 }
 
@@ -19,7 +18,6 @@ header {
   text-align: center;
   width: 100%;
   justify-content: space-between;
-  /* border: 1px solid red; */
   padding: 0.6rem 1.2rem;
   align-items: center;
 }
@@ -31,7 +29,6 @@ header {
 }
 
 .logo-img {
-  /* padding: 1rem; */
   padding-right: 0.2rem;
   height: 1.4rem;
 }
@@ -48,7 +45,6 @@ header {
   justify-content: space-between;
   gap: 1rem;
   align-items: center;
-  /* border: 1px solid blue; */
 }
 
 .nav-link {
@@ -63,20 +59,84 @@ a {
 
 /* Media queries of header */
 @media (min-width: 576px) {
-    header{
-        padding: 1rem 2.5rem;
-    }
-    .logo-img{
-        height: auto;
-        padding-right: 0.3rem;
-    }
-    .logo-heading{
-        font-size: 1.4rem;
-    }
-    .nav-links{
-        width: 15vw;
-    }
-    .nav-link{
-        font-size: 1rem;
-    }
+  header {
+    padding: 1rem 2.5rem;
+  }
+  .logo-img {
+    height: auto;
+    padding-right: 0.3rem;
+  }
+  .logo-heading {
+    font-size: 1.4rem;
+  }
+  .nav-links {
+    width: 15vw;
+  }
+  .nav-link {
+    font-size: 1rem;
+  }
 }
+
+/* =================
+    Hero Section
+   ================= */
+
+.hero-section {
+  background-image: url("images/hero.png");
+  color: white;
+  background-size: cover;
+  background-position: center;
+  padding: 1.3rem;
+  padding-top: 5rem;
+}
+
+.hero-heading {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.hero-p {
+  margin: 0;
+}
+
+/* media query of hero section */
+
+@media (min-width: 576px) {
+  .hero-section {
+    padding: 20rem 28rem 4rem 3.5rem;
+    max-height: 80vh;
+  }
+
+  .hero-heading {
+    font-size: 2.6rem;
+  }
+
+  .hero-p {
+    margin-right: 3rem;
+    font-size: 1.1rem;
+  }
+}
+
+/* =================
+    Main
+   ================= */
+
+.blog-container{
+  padding: 2rem 1.2rem;
+  display: grid;
+  grid-template-areas: "..."
+                       ".b."
+                       ".b."
+                       ".b."
+                       ".b."
+                       ".b."
+                       ".b."
+                       "...";
+}
+
+.blog{
+  grid-area: 'b';
+}
+
+
